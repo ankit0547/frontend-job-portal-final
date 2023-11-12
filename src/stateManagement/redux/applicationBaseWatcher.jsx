@@ -14,7 +14,6 @@ export function* test() {
   yield put(applicationLoadedSucessfully());
 }
 export function* getTest() {
-  debugger;
   yield all([put(processingStarted())]);
   try {
     const responseData = yield call(invokeApi, apiModule.GET_TEST_API);

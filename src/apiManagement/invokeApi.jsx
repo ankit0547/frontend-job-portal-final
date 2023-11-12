@@ -38,7 +38,6 @@ export const invokeApi = async (
 
   let config = { heders: { ...headers, ...header } };
   config = { ...config, ...apiOption };
-  debugger;
   let response = null;
   switch (apiOption.type) {
     case "GET":

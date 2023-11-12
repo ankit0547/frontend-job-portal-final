@@ -8,7 +8,6 @@ const initState = {
 
 export const ApplicationState = (state = initState, action = null) => {
   const { data } = action;
-  debugger;
   switch (action.type) {
     case commonTypes.APPLICATION_LOADED:
       return {
