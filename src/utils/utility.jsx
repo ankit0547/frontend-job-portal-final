@@ -18,3 +18,6 @@ export const clearAuthToken = () => {
   const token = localStorage.removeItem("auth-token");
   return token;
 };
+export const setAuthToken = (token) => {
+  localStorage.setItem("auth-token", token);
+};

@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
 import TextField from "../components/common/TextField";
 import { useFormik } from "formik";
+import { clearAuthToken, setAuthToken } from "../utils/utility";
 
 let formik;
 
@@ -17,9 +18,16 @@ const Home = () => {
     },
     validationSchema: validateSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      clearAuthToken();
+      formik.resetForm();
+      // alert(JSON.stringify(values, null, 2));
     },
   });
+
+  useEffect(() => {
+    setAuthToken("djhfalkdjshflkjdshfkjdshfkljsdfhlksjhf");
+  }, []);
+
   return (
     <div className='container'>
       <pre>{JSON.stringify(formik.values, null, 2)}</pre>
