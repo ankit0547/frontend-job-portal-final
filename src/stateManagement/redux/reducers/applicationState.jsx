@@ -1,5 +1,5 @@
 /* eslint-disable no-debugger */
-import { commonTypes } from "../../commonActions";
+import { commonTypes } from "../actions/commonActions";
 
 const initState = {
   isLoaded: false,

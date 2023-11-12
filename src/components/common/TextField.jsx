@@ -12,7 +12,7 @@ const TextField = ({
   handleOnChange,
 }) => {
   return (
-    <div>
+    <div className='mb-3'>
       <label className='mb-2' htmlFor={id}>
         {label}
       </label>
@@ -26,7 +26,7 @@ const TextField = ({
         value={value}
         onChange={handleOnChange}
       ></input>
-      <div className='field-validation-error'>{errors}</div>
+      <div className='field-error'>{errors}</div>
     </div>
   );
 };

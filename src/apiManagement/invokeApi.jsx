@@ -45,6 +45,14 @@ export const invokeApi = async (
         .get(updateEndPoint(apiOption.endpoint, pathParameters, queryParams))
         .then();
       break;
+    case "POST":
+      response = http
+        .post(
+          updateEndPoint(apiOption.endpoint, pathParameters, queryParams),
+          requestBody
+        )
+        .then();
+      break;
 
     default:
       break;

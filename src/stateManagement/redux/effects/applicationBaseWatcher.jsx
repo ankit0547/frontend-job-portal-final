@@ -5,10 +5,10 @@ import {
   commonTypes,
   processingCompleted,
   processingStarted,
-} from "../commonActions";
-import { invokeApi } from "../../apiManagement/invokeApi";
-import apiModule from "../../apiManagement/apiModule";
-import { getAction } from "../reduxUtils";
+} from "../actions/commonActions";
+import { invokeApi } from "../../../apiManagement/invokeApi";
+import apiModule from "../../../apiManagement/apiModule";
+import { getAction } from "../../reduxUtils";
 
 export function* test() {
   yield put(applicationLoadedSucessfully());

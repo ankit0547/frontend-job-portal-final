@@ -20,7 +20,6 @@ const Home = () => {
     onSubmit: (values) => {
       clearAuthToken();
       formik.resetForm();
-      // alert(JSON.stringify(values, null, 2));
     },
   });
 
