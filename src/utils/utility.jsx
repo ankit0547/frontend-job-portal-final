@@ -9,3 +9,12 @@ export const getPublicPath = (path) => {
 export const getEnvironment = () => {
   return process.env.REACT_DEV_HOST ? process.env.REACT_DEV_HOST : "";
 };
+
+export const getAuthToken = () => {
+  const token = localStorage.getItem("auth-token");
+  return token;
+};
+export const clearAuthToken = () => {
+  const token = localStorage.removeItem("auth-token");
+  return token;
+};

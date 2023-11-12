@@ -12,7 +12,6 @@ import store from "./stateManagement/appStore";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Suspense fallback='loading...'>
     <Provider store={store}>
-      {/* <RouterProvider router={Routing} /> */}
       <Routing />
     </Provider>
   </Suspense>

@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import ErrorPage from "./error-page";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { getAuthToken } from "../utils/utility";
 
 const ProtedtedRoute = ({ component, path, ...rest }) => {
   // eslint-disable-next-line no-debugger
   debugger;
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const token = localStorage.getItem("auth-token");
+  const token = getAuthToken();
   useEffect(() => {
     if (token) {
       setIsAuthenticated(true);
