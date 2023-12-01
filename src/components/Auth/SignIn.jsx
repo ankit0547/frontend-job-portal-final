@@ -6,9 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAction } from "../../stateManagement/reduxUtils";
 import { commonTypes } from "../../stateManagement/redux/actions/commonActions";
 import TextField from "../common/TextField";
-import { clearAuthToken } from "../../utils/utility";
+import {
+  clearAuthToken,
+  getAuthToken,
+  setAuthToken,
+} from "../../utils/utility";
 import { useFormik } from "formik";
 import { authActionTypes } from "./redux/actions/AuthActionTypes";
+import { useNavigate } from "react-router-dom";
 
 let formik;
 
@@ -31,6 +36,7 @@ const validateSchema = Yup.object().shape({
 
 const SignIn = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   formik = useFormik({
     initialValues: {
       email: "",
@@ -38,17 +44,20 @@ const SignIn = () => {
     },
     validationSchema: validateSchema,
     onSubmit: (values) => {
-      // debugger;
       dispatch(getAction(authActionTypes.GET_SIGN_IN, values));
     },
   });
-
-  const { testData } = useSelector((state) => state.AuthState);
+  const token = getAuthToken();
+  useEffect(() => {
+    if (token != null) {
+      navigate("/dashboard");
+    }
+  }, [token]);
 
   return (
     <div className='login-page'>
-      <pre>{JSON.stringify(formik.values, null, 2)}</pre>
-      <pre>{JSON.stringify(formik.errors, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
       <form onSubmit={formik.handleSubmit}>
         <div className='card login-card'>
           <h2 className='h2 text-center'>Sign In</h2>

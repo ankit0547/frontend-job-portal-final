@@ -1,6 +1,6 @@
 /* eslint-disable no-debugger */
 import { takeEvery, put, all, call } from "redux-saga/effects";
-import { authActionTypes } from "../actions/AuthActionTypes";
+import { authActionTypes, clearTokenAction } from "../actions/AuthActionTypes";
 import {
   processingCompleted,
   processingStarted,
@@ -10,7 +10,6 @@ import apiModule from "../../../../apiManagement/apiModule";
 import { getAction } from "../../../../stateManagement/reduxUtils";
 
 export function* getUserLogin(action) {
-  debugger;
   yield all([put(processingStarted())]);
   try {
     const responseData = yield call(
@@ -18,11 +17,11 @@ export function* getUserLogin(action) {
       apiModule.GET_USER_SIGN_IN,
       action.data
     );
-    debugger;
+    localStorage.setItem("auth-token", responseData.data.token);
     console.log("#RES>", responseData);
     if (responseData) {
       yield all([
-        put(getAction(authActionTypes.SET_AUTH_TOKEN, responseData.data)),
+        put(getAction(authActionTypes.SET_AUTH_TOKEN, responseData.data.token)),
         put(processingCompleted()),
       ]);
     }
@@ -31,8 +30,13 @@ export function* getUserLogin(action) {
   }
 }
 
+function* getClearToken() {
+  yield all([put(clearTokenAction())]);
+}
+
 function* authWatcher() {
   yield takeEvery(authActionTypes.GET_SIGN_IN, getUserLogin);
+  yield takeEvery(authActionTypes.CLEAR_TOKEN, getClearToken);
 }
 
 export default authWatcher;

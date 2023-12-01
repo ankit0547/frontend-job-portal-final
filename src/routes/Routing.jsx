@@ -6,6 +6,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useNavigate,
 } from "react-router-dom";
 import ErrorPage from "./error-page";
 import SignUp from "../components/Auth/SignUp";
@@ -13,6 +14,8 @@ import SignIn from "../components/Auth/SignIn";
 import ForgotPassword from "../components/Auth/forgotPassword";
 import Home from "./Home";
 import ProtedtedRoute from "./ProtedtedRoute";
+import { clearAuthToken } from "../utils/utility";
+import Dashboard from "../components/app/dashboard";
 // import PublicRoutes from "./PublicRoutes";
 
 // export const Routing = createBrowserRouter([
@@ -71,7 +74,7 @@ const Routing = () => {
         <Route path='/forgot-password' element={<SignUp />} />
         <Route
           path='/dashboard'
-          element={<ProtedtedRoute component={<div>Protedted route</div>} />}
+          element={<ProtedtedRoute component={<Dashboard />} />}
         />
         <Route path='*' element={<ErrorPage replace />} />
       </Routes>

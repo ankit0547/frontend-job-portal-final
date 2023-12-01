@@ -23,9 +23,9 @@ const Home = () => {
     },
   });
 
-  useEffect(() => {
-    setAuthToken("djhfalkdjshflkjdshfkjdshfkljsdfhlksjhf");
-  }, []);
+  // useEffect(() => {
+  //   setAuthToken("djhfalkdjshflkjdshfkjdshfkljsdfhlksjhf");
+  // }, []);
 
   return (
     <div className='container'>

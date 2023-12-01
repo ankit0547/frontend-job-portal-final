@@ -15,7 +15,7 @@ export const getAuthToken = () => {
   return token;
 };
 export const clearAuthToken = () => {
-  const token = localStorage.removeItem("auth-token");
+  const token = localStorage.clear();
   return token;
 };
 export const setAuthToken = (token) => {
