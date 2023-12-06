@@ -1,6 +1,6 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
-import http from "./http";
+import { AXIOS } from "./http";
 
 const updateEndPoint = (endPoint, pathParams, queryParms) => {
   let modifiedEndpoint = endPoint;
@@ -41,17 +41,15 @@ export const invokeApi = async (
   let response = null;
   switch (apiOption.type) {
     case "GET":
-      response = http
-        .get(updateEndPoint(apiOption.endpoint, pathParameters, queryParams))
-        .then();
+      response = AXIOS.get(
+        updateEndPoint(apiOption.endpoint, pathParameters, queryParams)
+      ).then();
       break;
     case "POST":
-      response = http
-        .post(
-          updateEndPoint(apiOption.endpoint, pathParameters, queryParams),
-          requestBody
-        )
-        .then();
+      response = AXIOS.post(
+        updateEndPoint(apiOption.endpoint, pathParameters, queryParams),
+        requestBody
+      ).then();
       break;
 
     default:

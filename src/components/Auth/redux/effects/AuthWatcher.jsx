@@ -26,7 +26,9 @@ export function* getUserLogin(action) {
       ]);
     }
   } catch (err) {
-    console.err("#ERR>", err);
+    debugger;
+    // yield all([put(getAction(authActionTypes.SET_SERVER_ERRORS, err))]);
+    console.log("#ERR>", JSON.stringify(err));
   }
 }
 

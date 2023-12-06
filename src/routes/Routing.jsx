@@ -70,12 +70,14 @@ const Routing = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/register' element={<SignUp />} />
         <Route path='/sign-up' element={<ForgotPassword />} />
         <Route path='/forgot-password' element={<SignUp />} />
-        <Route
+        <Route path='/dashboard' element={<Dashboard />} />
+        {/* <Route
           path='/dashboard'
           element={<ProtedtedRoute component={<Dashboard />} />}
-        />
+        /> */}
         <Route path='*' element={<ErrorPage replace />} />
       </Routes>
     </Router>

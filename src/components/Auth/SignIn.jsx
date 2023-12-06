@@ -35,6 +35,7 @@ const validateSchema = Yup.object().shape({
 });
 
 const SignIn = () => {
+  const { serverErrors } = useSelector((state) => state.AuthState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   formik = useFormik({
@@ -53,10 +54,10 @@ const SignIn = () => {
       navigate("/dashboard");
     }
   }, [token]);
-
+  console.log("####!!!!!!!!!!", serverErrors);
   return (
     <div className='login-page'>
-      {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
+      <pre>{JSON.stringify(formik.values, null, 2)}</pre>
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
       <form onSubmit={formik.handleSubmit}>
         <div className='card login-card'>

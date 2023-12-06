@@ -25,7 +25,7 @@ const TextField = ({
         aria-label={label}
         value={value}
         onChange={handleOnChange}
-      ></input>
+      />
       <div className='field-error'>{errors}</div>
     </div>
   );
