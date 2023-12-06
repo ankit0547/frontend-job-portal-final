@@ -14,6 +14,7 @@ import {
 import { useFormik } from "formik";
 import { authActionTypes } from "./redux/actions/AuthActionTypes";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../common/Navbar";
 
 let formik;
 
@@ -57,6 +58,7 @@ const SignIn = () => {
   console.log("####!!!!!!!!!!", serverErrors);
   return (
     <div className=''>
+      <Navbar />
       {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
       <div className='d-flex flex-column align-items-center justify-content-center mt-5'>

@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getAction } from "../../stateManagement/reduxUtils";
 import { authActionTypes } from "./redux/actions/AuthActionTypes";
+import Navbar from "../common/Navbar";
 
 let formik;
 
@@ -42,6 +43,7 @@ const SignUp = () => {
   });
   return (
     <div className=''>
+      <Navbar />
       {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
       <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
@@ -73,7 +75,7 @@ const SignUp = () => {
         <strong>
           Already registered? click here{" "}
           <button className='btn' onClick={() => navigate("/sign-in")}>
-            Signup
+            SignIn
           </button>
         </strong>
       </div>
