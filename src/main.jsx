@@ -10,12 +10,14 @@ import Routing from "./routes/Routing";
 import store from "./stateManagement/appStore";
 import Loader from "./components/common/Loader";
 import { ToastContainer } from "react-toastify";
+import { CssBaseline } from "@mui/material";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Suspense fallback='loading...'>
     <Provider store={store}>
       <Loader />
       <ToastContainer />
+      <CssBaseline />
       <Routing />
     </Provider>
   </Suspense>
