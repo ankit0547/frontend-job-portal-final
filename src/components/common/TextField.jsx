@@ -12,12 +12,12 @@ const TextField = ({
   handleOnChange,
 }) => {
   return (
-    <div className='mb-3'>
+    <div className='mb-3' id={`${id}-input`}>
       <label className='mb-2' htmlFor={id}>
         {label}
       </label>
       <input
-        id={id}
+        id={`${id}-input-${type}`}
         name={id}
         className='form-control mb-1'
         type={type}

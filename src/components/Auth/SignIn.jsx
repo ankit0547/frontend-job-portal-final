@@ -56,32 +56,42 @@ const SignIn = () => {
   }, [token]);
   console.log("####!!!!!!!!!!", serverErrors);
   return (
-    <div className='login-page'>
-      <pre>{JSON.stringify(formik.values, null, 2)}</pre>
+    <div className=''>
+      {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
-      <form onSubmit={formik.handleSubmit}>
-        <div className='card login-card'>
-          <h2 className='h2 text-center'>Sign In</h2>
-          <TextField
-            id='email'
-            label='Email'
-            value={formik.values.email}
-            handleOnChange={formik.handleChange}
-            errors={formik.errors.email}
-          />
-          <TextField
-            id='password'
-            type='password'
-            label='Password'
-            value={formik.values.password}
-            handleOnChange={formik.handleChange}
-            errors={formik.errors.password}
-          />
-          <button type='submit' className='btn btn-primary'>
-            Login
+      <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
+        <form onSubmit={formik.handleSubmit}>
+          <div className='card login-card'>
+            <h2 className='h2 text-center'>Sign In</h2>
+            <TextField
+              id='email'
+              label='Email'
+              value={formik.values.email}
+              handleOnChange={formik.handleChange}
+              errors={formik.errors.email}
+            />
+            <TextField
+              id='password'
+              type='password'
+              label='Password'
+              value={formik.values.password}
+              handleOnChange={formik.handleChange}
+              errors={formik.errors.password}
+            />
+            <button type='submit' className='btn text-white btn-primary'>
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className='text-center mt-3'>
+        <strong>
+          Not registered? click here{" "}
+          <button className='btn' onClick={() => navigate("/register")}>
+            Signup
           </button>
-        </div>
-      </form>
+        </strong>
+      </div>
     </div>
   );
 };

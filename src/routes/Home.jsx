@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import TextField from "../components/common/TextField";
 import { useFormik } from "formik";
 import { clearAuthToken, setAuthToken } from "../utils/utility";
+import Navbar from "../components/common/Navbar";
 
 let formik;
 
@@ -28,19 +29,26 @@ const Home = () => {
   // }, []);
 
   return (
-    <div className='container'>
-      <pre>{JSON.stringify(formik.values, null, 2)}</pre>
-      <pre>{JSON.stringify(formik.errors, null, 2)}</pre>
-      <form onSubmit={formik.handleSubmit}>
-        <TextField
-          id='name'
-          label='Name'
-          value={formik.values.name}
-          handleOnChange={formik.handleChange}
-          errors={formik.errors.name}
-        />
-        <button type={"submit"}>Submit</button>
-      </form>
+    <div className='container-fluid main'>
+      <Navbar />
+      <div className='row h-100'>
+        <div className='col-md-6 d-flex align-items-center '>
+          <div className=' d-flex  align-items-center w-100 justify-content-around'>
+            <TextField
+              type='text'
+              id='search-jobs'
+              placeholder='Search Jobs'
+              // className='w-100'
+            />
+            <button type='button' className='btn  btn-primary text-white'>
+              Search
+            </button>
+          </div>
+        </div>
+        <div className='col-md-6 d-flex justify-content-center align-items-center banner'>
+          <div className=''></div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -28,8 +28,19 @@ body {
   color: #121212;
 }
 
-.home{
+.main{
   border: 2px solid red;
+  min-height: 100vh;
+  /* background-color: ; */
+  /* filter: blur(300px ); */
+}
+
+.banner{
+  background-image: url('../public/find-jobs-banner.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 450px;
 }
 
 .field-error{
