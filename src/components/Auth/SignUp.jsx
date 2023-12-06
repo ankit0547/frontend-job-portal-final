@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import TextField from "../common/TextField";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { getAction } from "../../stateManagement/reduxUtils";
 import { authActionTypes } from "./redux/actions/AuthActionTypes";
 import Navbar from "../common/Navbar";
+import MultiLevelForm from "../common/MultiLevelForm/MultiLevelForm";
 
 let formik;
 
@@ -41,13 +42,14 @@ const SignUp = () => {
       dispatch(getAction(authActionTypes.GET_SIGN_IN, values));
     },
   });
+
   return (
     <div className=''>
       <Navbar />
       {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
       <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
-        <form onSubmit={formik.handleSubmit}>
+        {/* <form onSubmit={formik.handleSubmit}>
           <div className='card login-card'>
             <h2 className='h2 text-center'>Sign up</h2>
             <TextField
@@ -69,7 +71,8 @@ const SignUp = () => {
               Login
             </button>
           </div>
-        </form>
+        </form> */}
+        <MultiLevelForm id='multiLevelSignupForm' />
       </div>
       <div className='text-center mt-3'>
         <strong>
