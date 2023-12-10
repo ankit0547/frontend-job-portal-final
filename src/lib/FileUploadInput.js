@@ -43,7 +43,7 @@ const FileUploadInput = (props) => {
         setPopup({
           open: true,
           severity: "error",
-          message: err.response.statusText,
+          message: err.response,
           //   message: err.response.data
           //     ? err.response.data.message
           //     : err.response.statusText,
@@ -52,18 +52,18 @@ const FileUploadInput = (props) => {
   };
 
   return (
-    <Grid container item xs={12} direction="column" className={props.className}>
+    <Grid container item xs={12} direction='column' className={props.className}>
       <Grid container item xs={12} spacing={0}>
         <Grid item xs={3}>
           <Button
-            variant="contained"
-            color="primary"
-            component="label"
+            variant='contained'
+            color='primary'
+            component='label'
             style={{ width: "100%", height: "100%" }}
           >
             {props.icon}
             <input
-              type="file"
+              type='file'
               style={{ display: "none" }}
               onChange={(event) => {
                 console.log(event.target.files);
@@ -85,14 +85,14 @@ const FileUploadInput = (props) => {
             InputProps={{
               readOnly: true,
             }}
-            variant="outlined"
+            variant='outlined'
             style={{ width: "100%" }}
           />
         </Grid>
         <Grid item xs={3}>
           <Button
-            variant="contained"
-            color="secondary"
+            variant='contained'
+            color='secondary'
             style={{ width: "100%", height: "100%" }}
             onClick={() => handleUpload()}
             disabled={file ? false : true}
@@ -103,7 +103,7 @@ const FileUploadInput = (props) => {
       </Grid>
       {uploadPercentage !== 0 ? (
         <Grid item xs={12} style={{ marginTop: "10px" }}>
-          <LinearProgress variant="determinate" value={uploadPercentage} />
+          <LinearProgress variant='determinate' value={uploadPercentage} />
         </Grid>
       ) : null}
     </Grid>
