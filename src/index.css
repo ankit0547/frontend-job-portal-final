@@ -1,93 +1,13 @@
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  line-height: 1.5;
-  color: #121212;
-}
-
-.main{
-  border: 2px solid red;
-  min-height: 100vh;
-  /* background-color: ; */
-  /* filter: blur(300px ); */
-}
-
-.banner{
-  background-image: url('../public/find-jobs-banner.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 450px;
-}
-
-.field-error{
-  color: red;
-}
-
-.login-page{
-  /* border: 6px solid red; */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login-card{
-  width: 400px;
-  min-height: 400px;
-  padding: 12px 24px;
-
-
-}
-
-.loader{
-  position: absolute;
-  border: 2px solid red;
-  width: 100%;
-  height: 100vh;
-  background-color: #a5a5a6;
-}
-
-.dashboard-layout{
-  width: 100%;
-  min-height: 100vh;
-  background-color: #373790;
-}
-
-.loader img{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-#error-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 }
