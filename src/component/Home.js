@@ -690,8 +690,8 @@ const Home = (props) => {
           item
           xs
           direction='row'
-          alignItems='center'
-          justify='center'
+          alignItems='flex-start'
+          justify='flex-start'
           spacing={4}
         >
           {jobs.length > 0 ? (
