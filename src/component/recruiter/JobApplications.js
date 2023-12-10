@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "30px",
     margin: "20px 0",
     boxSizing: "border-box",
-    width: "100%",
+    width: "600px",
   },
   popupDialog: {
     height: "100%",
@@ -70,8 +70,8 @@ const FilterPopup = (props) => {
           minWidth: "50%",
         }}
       >
-        <Grid container direction="column" alignItems="center" spacing={3}>
-          <Grid container item alignItems="center">
+        <Grid container direction='column' alignItems='center' spacing={3}>
+          <Grid container item alignItems='center'>
             <Grid item xs={3}>
               Application Status
             </Grid>
@@ -79,14 +79,14 @@ const FilterPopup = (props) => {
               container
               item
               xs={9}
-              justify="space-around"
+              justify='space-around'
               // alignItems="center"
             >
               <Grid item>
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="rejected"
+                      name='rejected'
                       checked={searchOptions.status.rejected}
                       onChange={(event) => {
                         setSearchOptions({
@@ -99,14 +99,14 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Rejected"
+                  label='Rejected'
                 />
               </Grid>
               <Grid item>
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="applied"
+                      name='applied'
                       checked={searchOptions.status.applied}
                       onChange={(event) => {
                         setSearchOptions({
@@ -119,14 +119,14 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Applied"
+                  label='Applied'
                 />
               </Grid>
               <Grid item>
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="shortlisted"
+                      name='shortlisted'
                       checked={searchOptions.status.shortlisted}
                       onChange={(event) => {
                         setSearchOptions({
@@ -139,27 +139,27 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Shortlisted"
+                  label='Shortlisted'
                 />
               </Grid>
             </Grid>
           </Grid>
-          <Grid container item alignItems="center">
+          <Grid container item alignItems='center'>
             <Grid item xs={3}>
               Sort
             </Grid>
-            <Grid item container direction="row" xs={9}>
+            <Grid item container direction='row' xs={9}>
               <Grid
                 item
                 container
                 xs={4}
-                justify="space-around"
-                alignItems="center"
+                justify='space-around'
+                alignItems='center'
                 style={{ border: "1px solid #D1D1D1", borderRadius: "5px" }}
               >
                 <Grid item>
                   <Checkbox
-                    name="name"
+                    name='name'
                     checked={searchOptions.sort["jobApplicant.name"].status}
                     onChange={(event) =>
                       setSearchOptions({
@@ -173,11 +173,11 @@ const FilterPopup = (props) => {
                         },
                       })
                     }
-                    id="name"
+                    id='name'
                   />
                 </Grid>
                 <Grid item>
-                  <label for="name">
+                  <label for='name'>
                     <Typography>Name</Typography>
                   </label>
                 </Grid>
@@ -209,13 +209,13 @@ const FilterPopup = (props) => {
                 item
                 container
                 xs={4}
-                justify="space-around"
-                alignItems="center"
+                justify='space-around'
+                alignItems='center'
                 style={{ border: "1px solid #D1D1D1", borderRadius: "5px" }}
               >
                 <Grid item>
                   <Checkbox
-                    name="dateOfApplication"
+                    name='dateOfApplication'
                     checked={searchOptions.sort.dateOfApplication.status}
                     onChange={(event) =>
                       setSearchOptions({
@@ -229,11 +229,11 @@ const FilterPopup = (props) => {
                         },
                       })
                     }
-                    id="dateOfApplication"
+                    id='dateOfApplication'
                   />
                 </Grid>
                 <Grid item>
-                  <label for="dateOfApplication">
+                  <label for='dateOfApplication'>
                     <Typography>Date of Application</Typography>
                   </label>
                 </Grid>
@@ -265,13 +265,13 @@ const FilterPopup = (props) => {
                 item
                 container
                 xs={4}
-                justify="space-around"
-                alignItems="center"
+                justify='space-around'
+                alignItems='center'
                 style={{ border: "1px solid #D1D1D1", borderRadius: "5px" }}
               >
                 <Grid item>
                   <Checkbox
-                    name="rating"
+                    name='rating'
                     checked={searchOptions.sort["jobApplicant.rating"].status}
                     onChange={(event) =>
                       setSearchOptions({
@@ -285,11 +285,11 @@ const FilterPopup = (props) => {
                         },
                       })
                     }
-                    id="rating"
+                    id='rating'
                   />
                 </Grid>
                 <Grid item>
-                  <label for="rating">
+                  <label for='rating'>
                     <Typography>Rating</Typography>
                   </label>
                 </Grid>
@@ -323,8 +323,8 @@ const FilterPopup = (props) => {
 
           <Grid item>
             <Button
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               style={{ padding: "10px 50px" }}
               onClick={() => getData()}
             >
@@ -542,97 +542,118 @@ const ApplicationTile = (props) => {
   };
 
   return (
-    <Paper className={classes.jobTileOuter} elevation={3}>
-      <Grid container>
-        <Grid
-          item
-          xs={2}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Avatar
-            src={`${server}${application.jobApplicant.profile}`}
-            className={classes.avatar}
-          />
-        </Grid>
-        <Grid container item xs={7} spacing={1} direction="column">
-          <Grid item>
-            <Typography variant="h5">
-              {application.jobApplicant.name}
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Rating
-              value={
-                application.jobApplicant.rating !== -1
-                  ? application.jobApplicant.rating
-                  : null
-              }
-              readOnly
+    <Grid item>
+      <Paper className={classes.jobTileOuter} elevation={3}>
+        <Grid container justify='space-between'>
+          <Grid
+            item
+            xs={2}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Avatar
+              src={`${server}${application.jobApplicant.profile}`}
+              className={classes.avatar}
             />
           </Grid>
-          <Grid item>Applied On: {appliedOn.toLocaleDateString()}</Grid>
-          <Grid item>
-            Education:{" "}
-            {application.jobApplicant.education
-              .map((edu) => {
-                return `${edu.institutionName} (${edu.startYear}-${
-                  edu.endYear ? edu.endYear : "Ongoing"
-                })`;
-              })
-              .join(", ")}
-          </Grid>
-          <Grid item>
-            SOP: {application.sop !== "" ? application.sop : "Not Submitted"}
-          </Grid>
-          <Grid item>
-            {application.jobApplicant.skills.map((skill) => (
-              <Chip label={skill} style={{ marginRight: "2px" }} />
-            ))}
-          </Grid>
-        </Grid>
-        <Grid item container direction="column" xs={3}>
-          <Grid item>
-            <Button
-              variant="contained"
-              className={classes.statusBlock}
-              color="primary"
-              onClick={() => getResume()}
-            >
-              Download Resume
-            </Button>
-          </Grid>
-          <Grid item container xs>
-            {buttonSet[application.status]}
-          </Grid>
-        </Grid>
-      </Grid>
-      <Modal open={open} onClose={handleClose} className={classes.popupDialog}>
-        <Paper
-          style={{
-            padding: "20px",
-            outline: "none",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            minWidth: "30%",
-            alignItems: "center",
-          }}
-        >
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ padding: "10px 50px" }}
-            // onClick={() => changeRating()}
+          <Grid
+            container
+            item
+            xs={6}
+            spacing={1}
+            direction='column'
+            // alignItems='center'
           >
-            Submit
-          </Button>
-        </Paper>
-      </Modal>
-    </Paper>
+            <Grid item>
+              <Typography variant='h5'>
+                {application.jobApplicant.name}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Rating
+                value={
+                  application.jobApplicant.rating !== -1
+                    ? application.jobApplicant.rating
+                    : null
+                }
+                readOnly
+              />
+            </Grid>
+            <Grid item>Applied On: {appliedOn.toLocaleDateString()}</Grid>
+            <Grid item>
+              Education:{" "}
+              {application.jobApplicant.education
+                .map((edu) => {
+                  return `${edu.institutionName} (${edu.startYear}-${
+                    edu.endYear ? edu.endYear : "Ongoing"
+                  })`;
+                })
+                .join(", ")}
+            </Grid>
+            <Grid item>
+              SOP: {application.sop !== "" ? application.sop : "Not Submitted"}
+            </Grid>
+            <Grid item>
+              {application.jobApplicant.skills.map((skill) => (
+                <Chip label={skill} style={{ marginRight: "2px" }} />
+              ))}
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            container
+            direction='column'
+            xs={3}
+            alignItems='flex-end'
+            justify='flex-end'
+            spacing={2}
+          >
+            <Grid item>
+              <Button
+                variant='contained'
+                className={classes.statusBlock}
+                color='primary'
+                onClick={() => getResume()}
+              >
+                Download Resume
+              </Button>
+            </Grid>
+            <Grid item container xs spacing={1}>
+              {buttonSet[application.status]}
+            </Grid>
+          </Grid>
+        </Grid>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          className={classes.popupDialog}
+        >
+          <Paper
+            style={{
+              padding: "20px",
+              outline: "none",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              minWidth: "30%",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              variant='contained'
+              color='primary'
+              style={{ padding: "10px 50px" }}
+              // onClick={() => changeRating()}
+            >
+              Submit
+            </Button>
+          </Paper>
+        </Modal>
+      </Paper>
+    </Grid>
   );
 };
 
@@ -730,12 +751,12 @@ const JobApplications = (props) => {
       <Grid
         container
         item
-        direction="column"
-        alignItems="center"
+        direction='column'
+        alignItems='center'
         style={{ padding: "30px", minHeight: "93vh" }}
       >
         <Grid item>
-          <Typography variant="h2">Applications</Typography>
+          <Typography variant='h2'>Applications</Typography>
         </Grid>
         <Grid item>
           <IconButton onClick={() => setFilterOpen(true)}>
@@ -746,20 +767,17 @@ const JobApplications = (props) => {
           container
           item
           xs
-          direction="column"
+          direction='row'
           style={{ width: "100%" }}
-          alignItems="stretch"
-          justify="center"
+          alignItems='flex-start'
+          justify='flex-start'
         >
           {applications.length > 0 ? (
             applications.map((obj) => (
-              <Grid item>
-                {/* {console.log(obj)} */}
-                <ApplicationTile application={obj} getData={getData} />
-              </Grid>
+              <ApplicationTile application={obj} getData={getData} />
             ))
           ) : (
-            <Typography variant="h5" style={{ textAlign: "center" }}>
+            <Typography variant='h5' style={{ textAlign: "center" }}>
               No Applications Found
             </Typography>
           )}
