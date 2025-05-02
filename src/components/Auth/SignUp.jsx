@@ -6,7 +6,7 @@ import TextField from "../common/TextField";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getAction } from "../../stateManagement/reduxUtils";
-import { authActionTypes } from "./redux/actions/AuthActionTypes";
+import { authActionTypes } from "./redux/actions/authActionTypes";
 import Navbar from "../common/Navbar";
 import MultiLevelForm from "../common/MultiLevelForm/MultiLevelForm";
 
@@ -44,11 +44,11 @@ const SignUp = () => {
   });
 
   return (
-    <div className=''>
+    <div className="">
       <Navbar />
       {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
-      <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
+      <div className="d-flex flex-column align-items-center justify-content-center mt-5">
         {/* <form onSubmit={formik.handleSubmit}>
           <div className='card login-card'>
             <h2 className='h2 text-center'>Sign up</h2>
@@ -72,12 +72,12 @@ const SignUp = () => {
             </button>
           </div>
         </form> */}
-        <MultiLevelForm id='multiLevelSignupForm' />
+        <MultiLevelForm id="multiLevelSignupForm" />
       </div>
-      <div className='text-center mt-3'>
+      <div className="text-center mt-3">
         <strong>
           Already registered? click here{" "}
-          <button className='btn' onClick={() => navigate("/sign-in")}>
+          <button className="btn" onClick={() => navigate("/sign-in")}>
             SignIn
           </button>
         </strong>

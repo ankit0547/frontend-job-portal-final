@@ -12,7 +12,7 @@ import {
   setAuthToken,
 } from "../../utils/utility";
 import { useFormik } from "formik";
-import { authActionTypes } from "./redux/actions/AuthActionTypes";
+import { authActionTypes } from "./redux/actions/authActionTypes";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../common/Navbar";
 
@@ -57,39 +57,39 @@ const SignIn = () => {
   }, [token]);
   console.log("####!!!!!!!!!!", serverErrors);
   return (
-    <div className=''>
+    <div className="">
       <Navbar />
       {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
-      <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
+      <div className="d-flex flex-column align-items-center justify-content-center mt-5">
         <form onSubmit={formik.handleSubmit}>
-          <div className='card login-card'>
-            <h2 className='h2 text-center'>Sign In</h2>
+          <div className="card login-card">
+            <h2 className="h2 text-center">Sign In</h2>
             <TextField
-              id='email'
-              label='Email'
+              id="email"
+              label="Email"
               value={formik.values.email}
               handleOnChange={formik.handleChange}
               errors={formik.errors.email}
             />
             <TextField
-              id='password'
-              type='password'
-              label='Password'
+              id="password"
+              type="password"
+              label="Password"
               value={formik.values.password}
               handleOnChange={formik.handleChange}
               errors={formik.errors.password}
             />
-            <button type='submit' className='btn text-white btn-primary'>
+            <button type="submit" className="btn text-white btn-primary">
               Login
             </button>
           </div>
         </form>
       </div>
-      <div className='text-center mt-3'>
+      <div className="text-center mt-3">
         <strong>
           Not registered? click here{" "}
-          <button className='btn' onClick={() => navigate("/register")}>
+          <button className="btn" onClick={() => navigate("/register")}>
             Signup
           </button>
         </strong>

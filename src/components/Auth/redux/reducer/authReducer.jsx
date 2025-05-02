@@ -1,5 +1,5 @@
 /* eslint-disable no-debugger */
-import { authActionTypes } from "../actions/AuthActionTypes";
+import { authActionTypes } from "../actions/authActionTypes";
 
 const initState = {
   auth_token: "",

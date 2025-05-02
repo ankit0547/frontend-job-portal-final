@@ -11,7 +11,7 @@ import {
 import ErrorPage from "./error-page";
 import SignUp from "../components/Auth/SignUp";
 import SignIn from "../components/Auth/SignIn";
-import ForgotPassword from "../components/Auth/forgotPassword";
+import ForgotPassword from "../components/Auth/ForgotPassword";
 import Home from "./Home";
 import ProtedtedRoute from "./ProtedtedRoute";
 import { clearAuthToken } from "../utils/utility";
@@ -68,17 +68,17 @@ const Routing = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/register' element={<SignUp />} />
-        <Route path='/sign-up' element={<ForgotPassword />} />
-        <Route path='/forgot-password' element={<SignUp />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/sign-up" element={<ForgotPassword />} />
+        <Route path="/forgot-password" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route
           path='/dashboard'
           element={<ProtedtedRoute component={<Dashboard />} />}
         /> */}
-        <Route path='*' element={<ErrorPage replace />} />
+        <Route path="*" element={<ErrorPage replace />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 /* eslint-disable no-debugger */
 import { takeEvery, put, all, call } from "redux-saga/effects";
-import { authActionTypes, clearTokenAction } from "../actions/AuthActionTypes";
+import { authActionTypes, clearTokenAction } from "../actions/authActionTypes";
 import {
   processingCompleted,
   processingStarted,
